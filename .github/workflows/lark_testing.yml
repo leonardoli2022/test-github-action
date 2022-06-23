@@ -21,8 +21,8 @@ jobs:
       uses: echoings/actions.notify@v0.1.0
       with:
         plat_type: 'Lark'
-        notify_title: ${{ env.GITHUB_ACTION_REPOSITORY }}
-        notify_message: "❌ PHPUnit Test failed！@${{ env.GITHUB_ACTOR }}"
+        notify_title: ${{ github.ref_name }}
+        notify_message: "❌ PHPUnit Test failed！@${{ github.actor }}"
       env:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
 
