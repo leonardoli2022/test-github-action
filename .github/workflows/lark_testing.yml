@@ -15,6 +15,7 @@ jobs:
         notify_message: '✅ All Test passed, read to merge.'
       env:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
+        JOB_FAILURE_STATUS: 'no'
         
     - name: Notify to IM
       uses: echoings/actions.notify@v0.1.0
