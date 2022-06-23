@@ -17,12 +17,12 @@ jobs:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
         JOB_FAILURE_STATUS: 'no'
         
-    - name: Notify to IM
+    - name: Running Tests
       uses: echoings/actions.notify@v0.1.0
       with:
         plat_type: 'Lark'
-        notify_title: 'MixPay GitHub CI'
-        notify_message: '❌ PHPUnit Test failed！'
+        notify_title: '${{ GITHUB_ACTION_REPOSITORY}}'
+        notify_message: '❌ PHPUnit Test failed！@${{ secrets.GITHUB_ACTOR }} '
       env:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
 
