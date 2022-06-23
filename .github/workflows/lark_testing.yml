@@ -7,17 +7,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Notify to IM
-      uses: echoings/actions.notify@v0.1.0
-      with:
-        plat_type: 'Lark'
-        notify_title: 'Pull Request check'
-        notify_message: '✅ All Test passed, read to merge.'
-      env:
-        NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
-        JOB_FAILURE_STATUS: 'no'
         
     - name: Running Tests
+      if: ${{ failure() }}
       uses: echoings/actions.notify@v0.1.0
       with:
         plat_type: 'Lark'
@@ -27,10 +19,12 @@ jobs:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
 
     - name: Notify to IM
+      if: ${{ success() }}
       uses: echoings/actions.notify@v0.1.0
       with:
         plat_type: 'Lark'
-        notify_title: 'MixPay GitHub CI'
-        notify_message: '❌ Coding Style'
+        notify_title: 'Pull Request check'
+        notify_message: '✅ All Test passed, read to merge.'
       env:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
+        JOB_FAILURE_STATUS: 'no'
