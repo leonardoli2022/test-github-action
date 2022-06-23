@@ -21,6 +21,15 @@ jobs:
       with:
         plat_type: 'Lark'
         notify_title: 'MixPay GitHub CI'
-        notify_message: '❌ Test failed！'
+        notify_message: '❌ PHPUnit Test failed！'
+      env:
+        NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
+
+    - name: Notify to IM
+      uses: echoings/actions.notify@v0.1.0
+      with:
+        plat_type: 'Lark'
+        notify_title: 'MixPay GitHub CI'
+        notify_message: '❌ Coding Style'
       env:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
