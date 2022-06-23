@@ -1,0 +1,17 @@
+on: push
+name: IM Notification Demo
+jobs:
+  notification:
+    name: IM Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Notify to IM
+      uses: echoings/actions.notify@v0.1.0
+      with:
+        plat_type: 'Lark'
+        notify_title: 'Project Updated'
+        notify_message: 'Project updated, please check projects online status'
+      env:
+        NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
