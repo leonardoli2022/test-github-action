@@ -10,7 +10,7 @@ jobs:
         
     - name: Running Tests
       if: ${{ failure() }}
-      uses: echoings/actions.notify@v0.1.0
+      uses: leonardoli2022/actions.notify@v0.2.1
       with:
         plat_type: 'Lark'
         notify_title: "PR: ${{ github.ref_name }} "
