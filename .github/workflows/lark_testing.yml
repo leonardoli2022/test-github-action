@@ -20,7 +20,7 @@ jobs:
 
     - name: Notify to IM
       if: ${{ success() }}
-      uses: echoings/actions.notify@v0.1.0
+      uses: leonardoli2022/actions.notify@v0.2.2
       with:
         plat_type: 'Lark'
         notify_title: 'Pull Request check'
