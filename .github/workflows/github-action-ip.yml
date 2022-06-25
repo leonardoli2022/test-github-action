@@ -1,3 +1,4 @@
+name: Github Action IP
 on:
   workflow_dispatch:
 
