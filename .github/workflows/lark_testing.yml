@@ -1,4 +1,6 @@
-on: none
+on:
+  push:
+    branches: none # [ main ]
 name: IM Notification Demo
 jobs:
   notification:
