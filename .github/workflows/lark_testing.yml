@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Running Tests1
-      if: ${{ !env.ALLOW_RUN_TESTS }}
+      if: ${{ env.ALLOW_RUN_TESTS }}
 #      if: ${{ failure() }}
       uses: leonardoli2022/actions.notify@v0.2.3
       with:
