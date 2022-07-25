@@ -4,7 +4,6 @@ on:
     
 name: Lark Notification
 
-
 env:
   SKIP_TESTS: ${{ !contains(github.event.commits[0].message, '[skip test]') }}
 
