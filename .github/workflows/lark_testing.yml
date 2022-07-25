@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    
     - name: Running Tests
       if: ${{ env.ALLOW_RUN_TESTS }}
 #      if: ${{ failure() }}
