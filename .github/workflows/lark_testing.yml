@@ -4,7 +4,6 @@ on:
     
 name: Lark Notification
 
-
 env:
   SKIP_TESTS: ${{ !contains(github.event.commits[0].message, '[skip test]') }}
 
@@ -16,6 +15,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.10.0
+      with:
+        access_token: ${{ github.token }}
     - name: Running Tests1
       if: ${{ env.SKIP_TESTS == 'true' }}
 #      if: ${{ failure() }}
