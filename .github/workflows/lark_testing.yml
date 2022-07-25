@@ -33,7 +33,7 @@ jobs:
       with:
         plat_type: 'Lark'
         notify_title: 'Pull Request check'
-        notify_message: '✅ All Test passed, read to merge.'
+        notify_message: '✅ All Test passed, read to merge. ${{ env.ALLOW_RUN_TESTS }}'
         template_color: 'green'
       env:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
