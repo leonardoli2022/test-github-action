@@ -10,7 +10,7 @@ env:
 
 jobs:
   notification:
-    if: "${{ env.ALLOW_RUN_TESTS == 'true' }}"
+    if: env.ALLOW_RUN_TESTS == 'true'
     
     name: IM Notification
     runs-on: ubuntu-latest
