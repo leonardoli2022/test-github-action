@@ -18,7 +18,7 @@ jobs:
     
         
     - name: Running Tests
-      if: ${{ env.ALLOW_RUN_TESTS == 'true' }}
+      if: "${{ env.ALLOW_RUN_TESTS }}"
 #      if: ${{ failure() }}
       uses: leonardoli2022/actions.notify@v0.2.3
       with:
