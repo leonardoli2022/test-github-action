@@ -7,9 +7,10 @@ name: Lark Notification
 env:
   ALLOW_RUN_TESTS: "!contains(github.event.commits[0].message, '[skip test]')"
 
+
 jobs:
   notification:
-    if: env.ALLOW_RUN_TESTS
+    if: "${{ env.ALLOW_RUN_TESTS }}"
     
     name: IM Notification
     runs-on: ubuntu-latest
