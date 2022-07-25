@@ -1,6 +1,7 @@
 on:
   push:
-    branches: none # [ main ]
+    branches: [ "master" ]
+    
 name: Lark Notification
 jobs:
   notification:
