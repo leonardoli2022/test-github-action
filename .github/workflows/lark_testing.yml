@@ -21,7 +21,7 @@ jobs:
       with:
         plat_type: 'Lark'
         notify_title: "PR: ${{ github.ref_name }} "
-        notify_message: "❌ PHPUnit Test failed！@${{ github.actor }} 请处理。"
+        notify_message: "❌ PHPUnit Test failed！@${{ github.actor }} 请处理。 ${{ env.ALLOW_RUN_TESTS }}"
         template_color: 'red'
       env:
         NOTIFY_WEBHOOK: ${{ secrets.NOTIFY_WEBHOOK }}
