@@ -5,6 +5,8 @@ on:
 name: Lark Notification
 jobs:
   notification:
+    if: "!contains(github.event.commits[0].message, '[skip test]')"
+    
     name: IM Notification
     runs-on: ubuntu-latest
     steps:
