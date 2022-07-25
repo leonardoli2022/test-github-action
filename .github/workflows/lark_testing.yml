@@ -3,9 +3,13 @@ on:
     branches: [ "main" ]
     
 name: Lark Notification
+
+env:
+  ALLOW_RUN_TESTS: "!contains(github.event.commits[0].message, '[skip test]')"
+
 jobs:
   notification:
-    if: "!contains(github.event.commits[0].message, '[skip test]')"
+    if: ALLOW_RUN_TESTS
     
     name: IM Notification
     runs-on: ubuntu-latest
